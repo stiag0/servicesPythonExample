@@ -1,0 +1,16 @@
+[
+    {
+        "fecha": "2019-08-10 11:24:08",
+        "sensor": "DHT11",
+        "unidades": "%",
+        "valor": 0.85,
+        "variable": "humedad"
+    },
+    {
+        "fecha": "2019-08-11 13:24:08",
+        "sensor": "DHT11",
+        "unidades": "%",
+        "valor": 0.75,
+        "variable": "humedad"
+    }
+]
