@@ -2,8 +2,6 @@ from flask import Flask,jsonify,request
 from flask_cors import CORS
 from datetime import datetime
 #biblioteca adicional a las de calse
-from collections import OrderedDict
-import logging
 #inicia flask
 app =Flask(__name__)
 #permite comunicacion entre puetos
@@ -37,18 +35,14 @@ def postOne():
     return jsonify(mediciones)
 @app.route('/top30%')
 def topMed():
-    #top = mediciones.sort(valor,reverse =True)
     total = len(mediciones)
     mostrar = int(total*0.30) 
     top = sorted(mediciones, key = lambda i: i['valor'], reverse= True)
-    #top = mediciones.sort(mediciones[])
     while len(top) > mostrar:
         top.pop()
-        
+
     return jsonify(top)
 
-# @app.route('/mediciones/fecha/<string:fecha>',methods=['GET'])
-# def getbyFecha(fecha):
 
 app.run(port=5555,debug=True)
     
