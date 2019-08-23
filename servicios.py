@@ -6,7 +6,7 @@ app =Flask(__name__)
 #permite comunicacion entre puetos
 CORS(app)
 #kwargs
-tipo_medicion ={'sensor':'DHT11','variable':'umedad','unidades': '%' }
+tipo_medicion ={'sensor':'DHT11','variable':'humedad','unidades': '%' }
 
 mediciones =[
     {'fecha': '2019-08-10 11:24:08',**tipo_medicion,'valor':0.85},
@@ -20,6 +20,10 @@ mediciones =[
 def get():
     return jsonify (tipo_medicion)
 
+@app.route('/todo')
+def getA():
+    return jsonify(mediciones)
+        
 @app.route('/mediciones',methods=['POST'])
 def postOne():
     now = datetime.now()
