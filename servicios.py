@@ -30,7 +30,7 @@ def getA():
 def postOne():
     now = datetime.now()
     body = request.json
-    body['fecha']=datetime.strftime(now,'%Y-%m-%d %H:-%M-%S')
+    body['fecha']=datetime.strftime(now,'%Y-%m-%d %H:%M:%S')
     mediciones.append({**body,**tipo_medicion})
     return jsonify(mediciones)
 @app.route('/top30%')
